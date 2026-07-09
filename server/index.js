@@ -106,6 +106,9 @@ app.post("/api/register", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("后端启动成功：http://localhost:3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(
+    `服务器启动成功:${PORT}`
+  );
 });
