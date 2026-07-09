@@ -29,12 +29,11 @@ import HelloWorld from './views/Login.vue'
 }
 </style> -->
 
-
 <template>
   <router-view />
 
   <CookieBanner />
-  <!-- ⭐全局Toast -->
+  <!-- 全局Toast -->
   <Toast ref="toastRef" />
 </template>
 
@@ -45,7 +44,7 @@ import CookieBanner from "./components/CookieBanner.vue";
 
 const toastRef = ref(null);
 
-// ⭐封装全局方法
+// 封装全局方法
 const toast = {
   success(msg) {
     toastRef.value.show(msg, "success");
@@ -55,12 +54,11 @@ const toast = {
   },
   warning(msg) {
     toastRef.value.show(msg, "warning");
-  }
+  },
 };
 
-// ⭐提供给全局
+// 提供给全局
 provide("toast", toast);
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
