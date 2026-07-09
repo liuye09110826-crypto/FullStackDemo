@@ -92,13 +92,13 @@ app.post("/api/register", (req, res) => {
 
     db.query(insertSql, [username, password], (err, result) => {
       if (err) {
-  console.log("注册SQL错误：", err);
+        console.log("注册SQL错误：", err);
 
-  return res.send({
-    code: 500,
-    message: err.message
-  });
-}
+        return res.send({
+          code: 500,
+          message: err.message
+        });
+      }
       res.send({
         code: 200,
         message: "注册成功",
