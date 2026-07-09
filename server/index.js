@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const helmet = require("helmet");
 const db = require("./db");
 
 const app = express();   //Express创建了一个 Web 服务器
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended:true
 }));
+app.use(helmet());
 
 // 登录接口
 app.post("/api/login", (req, res) => {
